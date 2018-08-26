@@ -100,13 +100,13 @@ func (c *Client) CreateCheck(ctx context.Context, applicantID string, cr CheckRe
 
 // GetCheck retrieves a check for the provided applicant by its ID.
 // see https://documentation.onfido.com/?shell#retrieve-check
-func (c *Client) GetCheck(ctx context.Context, applicantID, id string) (*Check, error) {
+func (c *Client) GetCheck(ctx context.Context, applicantID, id string) (*GetCheck, error) {
 	req, err := c.newRequest("GET", "/applicants/"+applicantID+"/checks/"+id, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	var resp Check
+	var resp GetCheck
 	_, err = c.do(ctx, req, &resp)
 	return &resp, err
 }
