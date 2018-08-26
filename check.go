@@ -59,6 +59,22 @@ type Check struct {
 	Tags        []string    `json:"tags,omitempty"`
 }
 
+// GetCheck represents a retrieve-check in Onfido API
+type GetCheck struct {
+	ID          string      `json:"id,omitempty"`
+	CreatedAt   *time.Time  `json:"created_at,omitempty"`
+	Href        string      `json:"href,omitempty"`
+	Type        CheckType   `json:"type,omitempty"`
+	Status      CheckStatus `json:"status,omitempty"`
+	Result      CheckResult `json:"result,omitempty"`
+	DownloadURI string      `json:"download_uri,omitempty"`
+	FormURI     string      `json:"form_uri,omitempty"`
+	RedirectURI string      `json:"redirect_uri,omitempty"`
+	ResultsURI  string      `json:"results_uri,omitempty"`
+	Reports     []string    `json:"reports,omitempty"`
+	Tags        []string    `json:"tags,omitempty"`
+}
+
 // Checks represents a list of checks in Onfido API
 type Checks struct {
 	Checks []*Check `json:"checks"`
