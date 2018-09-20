@@ -55,4 +55,11 @@ func main() {
 	}
 
 	fmt.Printf("Form: %+v\n", check.FormURI)
+
+	getCheck, err := client.GetCheck(ctx, applicant.ID, check.ID)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Printf("Reports: %+v\n", getCheck.Reports)
 }
