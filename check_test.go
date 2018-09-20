@@ -110,7 +110,7 @@ func TestGetCheck_NonOKResponse(t *testing.T) {
 
 func TestGetCheck_CheckRetrieved(t *testing.T) {
 	applicantID := "541d040b-89f8-444b-8921-16b1333bf1c6"
-	expected := onfido.Check{
+	expected := onfido.GetCheck{
 		ID:          "ce62d838-56f8-4ea5-98be-e7166d1dc33d",
 		Href:        "/v2/live_photos/7410A943-8F00-43D8-98DE-36A774196D86",
 		Type:        onfido.CheckTypeExpress,
@@ -120,12 +120,8 @@ func TestGetCheck_CheckRetrieved(t *testing.T) {
 		FormURI:     "https://onfido.com/information/1234",
 		RedirectURI: "https://somewhere.else",
 		ResultsURI:  "https://onfido.com/dashboard/information_requests/1234",
-		Reports: []*onfido.Report{
-			{
-				ID:     "7410a943-8f00-43d8-98de-36a774196d86",
-				Name:   onfido.ReportNameDocument,
-				Result: onfido.ReportResultClear,
-			},
+		Reports: []string{
+			"7410a943-8f00-43d8-98de-36a774196d86",
 		},
 		Tags: []string{"my-tag"},
 	}
