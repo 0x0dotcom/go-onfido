@@ -37,10 +37,10 @@ type HTTPRequester interface {
 type Error struct {
 	Resp *http.Response
 	Err  struct {
-		ID     string                                 `json:"id"`
-		Type   string                                 `json:"type"`
-		Msg    string                                 `json:"message"`
-		Fields map[string]struct{ Messages []string } `json:"fields"`
+		ID     string              `json:"id"`
+		Type   string              `json:"type"`
+		Msg    string              `json:"message"`
+		Fields map[string][]string `json:"fields"`
 	} `json:"error"`
 }
 
