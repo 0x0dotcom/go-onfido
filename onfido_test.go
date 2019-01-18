@@ -185,7 +185,7 @@ func TestDo_InvalidStatusCode_JsonParsed(t *testing.T) {
 			ID     string              `json:"id"`
 			Type   string              `json:"type"`
 			Msg    string              `json:"message"`
-			Fields map[string][]string `json:"fields"`
+			Fields ErrorFields `json:"fields"`
 		}{
 			ID:   "123",
 			Type: "foo",
